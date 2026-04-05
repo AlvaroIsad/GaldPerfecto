@@ -200,6 +200,8 @@ function abrirGaleria(imgs, titulo, desc) {
     modal.classList.add("activo");
     document.body.classList.add("no-scroll");
 
+    // Limpiar imagen antes de mostrar la nueva
+    modalImg.src = "";  
     actualizarContenido(titulo, desc);
 }
 
@@ -227,6 +229,10 @@ function cambiarImg(direccion) {
 function cerrarModal() {
     modal.classList.remove("activo");
     document.body.classList.remove("no-scroll");
+
+    // Limpiar imagen para evitar que se vea la anterior
+    modalImg.src = "";
+    index = 0;
 }
 
 window.onclick = function(e) {
