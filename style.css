@@ -99,7 +99,7 @@ nav ul li a:hover::after {
     position: relative;
 
     background-image: linear-gradient(rgba(0, 0, 0, 0.075), rgba(0, 0, 0, 0.096)),
-                      url('imagenes/FONDo/fondo.jpg'); /* TU IMAGEN */
+                      url('imagenes/FONDO/fondo.jpg'); /* TU IMAGEN */
 
     background-size: cover;
     background-position: center;
