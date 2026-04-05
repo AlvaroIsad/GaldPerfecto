@@ -147,6 +147,9 @@ Mensaje:
 ${mensaje}
         `;
 
+         // 🔥 DETECTAR SI ES MÓVIL
+        const esMovil = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
         const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${destino}&su=${encodeURIComponent(asunto)}&body=${encodeURIComponent(body)}`;
 
         // 🔥 ABRIR GMAIL
@@ -154,6 +157,12 @@ ${mensaje}
 
         // 🔥 LIMPIAR FORM
         form.reset();
+
+        if (esMovil) {
+            // 👉 ABRE APP DE CORREO
+            url = `mailto:${destino}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(body)}`;
+            window.location.href = url;
+        } 
 
         // 🔥 MENSAJE DE ÉXITO
         if (msg) {
@@ -166,25 +175,6 @@ ${mensaje}
     });
 
 });
-</script>
-
-<script>
-    // Espera a que cargue todo el DOM
-    document.addEventListener("DOMContentLoaded", () => {
-        const toggle = document.getElementById("menu-toggle"); // el botón hamburguesa
-        const menu = document.querySelector("nav ul.menu"); // el menú
-
-        toggle.addEventListener("click", () => {
-            menu.classList.toggle("active"); // agrega/quita la clase "active"
-        });
-
-        // Opcional: cerrar menú al hacer clic en un enlace
-        menu.querySelectorAll("a").forEach(link => {
-            link.addEventListener("click", () => {
-                menu.classList.remove("active");
-            });
-        });
-    });
 </script>
 
 </body>
