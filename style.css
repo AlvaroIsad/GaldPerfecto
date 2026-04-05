@@ -1130,13 +1130,14 @@ body.no-scroll {
     background: #1ebe5d;
 }
 
-/* ===== RESPONSIVE CELULAR (max-width:480px) ===== */
+/* ===== RESPONSIVE CELULAR Y TABLET ===== */
 
 /* ===== MENÚ HAMBURGUESA CELULAR/TABLET ===== */
 nav .menu-toggle {
-    display: none;
+    display: none; /* oculto por defecto en escritorio */
     font-size: 28px;
     cursor: pointer;
+    z-index: 1000; /* para estar sobre el menú */
 }
 
 /* ===== CELULAR (max-width:480px) ===== */
@@ -1151,6 +1152,7 @@ nav .menu-toggle {
         display: block;
     }
 
+    /* Menú oculto inicialmente */
     nav ul.menu {
         position: fixed;
         top: 60px;
@@ -1168,6 +1170,7 @@ nav .menu-toggle {
         z-index: 999;
     }
 
+    /* Menú visible al hacer clic en hamburguesa */
     nav ul.menu.active {
         left: 0;
     }
@@ -1310,37 +1313,121 @@ nav .menu-toggle {
     }
 }
 
-/* ===== LAPTOPS / MEDIOS (769px - 1024px) ===== */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* ===== LAPTOP ESTÁNDAR (1025px - 1440px) ===== */
+@media (min-width: 1025px) and (max-width: 1440px) {
     nav {
-        padding: 15px 50px;
+        padding: 18px 60px;
     }
 
     nav ul.menu {
-        gap: 25px;
+        display: flex;
+        gap: 28px;
+        position: static;
+        height: auto;
+        flex-direction: row;
+        background: none;
     }
 
     .banner h1 {
-        font-size: 42px;
-        margin-top: 130px;
-        padding: 25px 30px;
+        font-size: 46px;
+        margin-top: 120px; /* ajustado para altura laptop */
+        padding: 28px 35px;
     }
 
     .nosotros .grid-nosotros,
     .servicios .servicios-grid,
     .trabajo .proceso,
     .proyectos .proyectos-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .nosotros .imagenes img,
     .servicios .servicio .imagenes img,
     .proyectos .proyecto img {
-        height: 220px;
+        height: 240px;
     }
 
     .contacto .contacto-grid {
         grid-template-columns: 1fr 1fr;
+    }
+
+    nav .menu-toggle {
+        display: none;
+    }
+}
+
+
+/* ===== LAPTOP GRANDE / FULL HD (1441px - 1920px) ===== */
+@media (min-width: 1441px) and (max-width: 1920px) {
+    nav {
+        padding: 20px 80px;
+    }
+
+    nav ul.menu {
+        display: flex;
+        gap: 32px;
+        position: static;
+        height: auto;
+        flex-direction: row;
+        background: none;
+    }
+
+    .banner h1 {
+        font-size: 52px;
+        margin-top: 120px; /* importante: no subir mucho */
+        padding: 30px 40px;
+    }
+
+    .nosotros .grid-nosotros,
+    .servicios .servicios-grid,
+    .trabajo .proceso,
+    .proyectos .proyectos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .nosotros .imagenes img,
+    .servicios .servicio .imagenes img,
+    .proyectos .proyecto img {
+        height: 260px;
+    }
+
+    .contacto .contacto-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    nav .menu-toggle {
+        display: none;
+    }
+}
+
+/* ===== AJUSTE POR ALTURA BAJA (laptops ~485px) ===== */
+@media (max-height: 500px) {
+
+    nav {
+        padding: 10px 40px;
+    }
+
+    .banner h1 {
+        font-size: 32px;
+        margin-top: 60px; /* MUCHO más compacto */
+        padding: 15px 20px;
+    }
+
+    .nosotros .grid-nosotros,
+    .servicios .servicios-grid,
+    .trabajo .proceso,
+    .proyectos .proyectos-grid {
+        gap: 15px;
+    }
+
+    .nosotros .imagenes img,
+    .servicios .servicio .imagenes img,
+    .proyectos .proyecto img {
+        height: 160px; /* reducir altura */
+    }
+
+    .contacto .contacto-grid {
+        gap: 15px;
     }
 }
 
