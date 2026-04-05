@@ -1385,14 +1385,6 @@ nav .menu-toggle {
         height: clamp(150px, 20vw, 250px);
     }
 
-    /* ===== SERVICIOS ===== */
-    .servicios .servicio {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-    }
-
     .servicios .servicio .imagenes img {
         height: clamp(90px, 10vw, 140px);
     }
@@ -1412,11 +1404,6 @@ nav .menu-toggle {
     }
 
     /* ===== CONTACTO ===== */
-    .contacto .contacto-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        justify-content: center;
-        text-align: center;
-    }
 
     .contacto .formulario,
     .contacto .info-contacto {
