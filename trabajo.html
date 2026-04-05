@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gald Perfecto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imagenes/INICIO/LOGO22.jpg" type="image/jpg">
+
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- TIPOGRAFÍA -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">
+        <img src="imagenes/INICIO/LOGO.jpg" alt="Logo GaldPerfecto">
+    </div>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="trabajo.html">Metodologías</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+</nav>
+
+<!-- ================= METODOLOGÍA ================= -->
+<section id="trabajo" class="section trabajo">
+
+    <div class="contenedor">
+
+        <!-- TITULO -->
+        <div class="titulo-seccion">
+            <h2>Nuestra Metodología de Trabajo</h2>
+            <p>Procesos optimizados que garantizan precisión, eficiencia y resultados confiables.</p>
+        </div>
+
+        <!-- PROCESO -->
+        <div class="proceso">
+
+            <div class="paso">
+                <div class="numero">1</div>
+                <h3>Diagnóstico</h3>
+                <p>Analizamos la situación actual del cliente para identificar problemas y oportunidades de mejora.</p>
+            </div>
+
+            <div class="paso">
+                <div class="numero">2</div>
+                <h3>Levantamiento en Campo</h3>
+                <p>Recolectamos datos con herramientas móviles y validaciones en tiempo real.</p>
+            </div>
+
+            <div class="paso">
+                <div class="numero">3</div>
+                <h3>Procesamiento</h3>
+                <p>Depuramos y estructuramos la información para asegurar calidad y consistencia.</p>
+            </div>
+
+            <div class="paso">
+                <div class="numero">4</div>
+                <h3>Implementación</h3>
+                <p>Desarrollamos soluciones web, SIG y dashboards interactivos.</p>
+            </div>
+
+            <div class="paso">
+                <div class="numero">5</div>
+                <h3>Entrega Final</h3>
+                <p>Capacitamos al cliente y entregamos herramientas listas para su uso.</p>
+            </div>
+
+        </div>
+
+        <!-- DIFERENCIALES -->
+        <div class="diferenciales">
+
+            <div class="item">
+                <div class="icono">⚡</div>
+                <h4>Rapidez</h4>
+                <p>Procesos optimizados para resultados en menor tiempo.</p>
+            </div>
+
+            <div class="item">
+                <div class="icono">📍</div>
+                <h4>Precisión</h4>
+                <p>Uso de tecnologías SIG y validación geográfica.</p>
+            </div>
+
+            <div class="item">
+                <div class="icono">📊</div>
+                <h4>Datos Confiables</h4>
+                <p>Control de calidad en cada etapa del proyecto.</p>
+            </div>
+
+            <div class="item">
+                <div class="icono">🚀</div>
+                <h4>Innovación</h4>
+                <p>Soluciones digitales modernas adaptadas al cliente.</p>
+            </div>
+
+        </div>
+
+        <!-- VIDEO -->
+        <div class="video-trabajo">
+            <h3>Conoce Nuestro Proceso</h3>
+
+            <p class="video-descripcion">
+                Observa cómo aplicamos tecnología y experiencia en campo para transformar datos en soluciones reales.
+            </p>
+
+            <div class="video-container">
+                <iframe 
+                    width="100%" 
+                    height="400"
+                    src="https://www.youtube.com/embed/Cfu28ag0yTg"
+                    title="Video del proceso"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- FRASE FINAL -->
+        <p class="frase">
+            Transformamos datos en decisiones inteligentes.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/51915144679" class="whatsapp" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+    <span>Contáctanos</span>
+</a>
+
+<!-- SCRIPT ANIMACIONES -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const cards = document.querySelectorAll(".paso, .item");
+    const triggerPoint = window.innerHeight * 1000000000000;
+
+    const animate = () => {
+        cards.forEach((card, index) => {
+            const top = card.getBoundingClientRect().top;
+
+            if (top < triggerPoint && !card.classList.contains("visible")) {
+                setTimeout(() => {
+                    card.classList.add("visible");
+                }, index * 80);
+            }
+        });
+    };
+
+    window.addEventListener("scroll", animate);
+    window.addEventListener("load", animate);
+});
+</script>
+
+</body>
+</html>
