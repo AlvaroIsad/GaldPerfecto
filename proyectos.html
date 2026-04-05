@@ -20,9 +20,16 @@
     <div class="logo">
         <img src="imagenes/INICIO/LOGO.jpg" alt="Logo GaldPerfecto">
     </div>
-    <ul>
+
+    <!-- Botón hamburguesa -->
+    <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Menú desplegable -->
+    <ul class="menu">
         <li><a href="index.html">Inicio</a></li>
-        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="./#nosotros">Nosotros</a></li>
         <li><a href="servicios.html">Servicios</a></li>
         <li><a href="trabajo.html">Metodologías</a></li>
         <li><a href="proyectos.html">Proyectos</a></li>
@@ -246,6 +253,25 @@ document.addEventListener("keydown", function(e) {
     if (e.key === "ArrowRight") cambiarImg(1);
     if (e.key === "ArrowLeft") cambiarImg(-1);
 });
+</script>
+
+<script>
+    // Espera a que cargue todo el DOM
+    document.addEventListener("DOMContentLoaded", () => {
+        const toggle = document.getElementById("menu-toggle"); // el botón hamburguesa
+        const menu = document.querySelector("nav ul.menu"); // el menú
+
+        toggle.addEventListener("click", () => {
+            menu.classList.toggle("active"); // agrega/quita la clase "active"
+        });
+
+        // Opcional: cerrar menú al hacer clic en un enlace
+        menu.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                menu.classList.remove("active");
+            });
+        });
+    });
 </script>
 
 </body>
