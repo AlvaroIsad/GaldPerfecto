@@ -1498,6 +1498,33 @@ nav .menu-toggle {
     }
 }
 
+/* ALTURA MEDIA */
+@media (min-width: 1024px) and (max-height: 700px) {
+
+    .carrusel {
+        height: clamp(100px, 20vh, 200px);
+        margin-top: 10px; /* 🔥 menos separación */
+    }
+}
+
+/* ALTURA BAJA */
+@media (min-width: 1024px) and (max-height: 550px) {
+
+    .carrusel {
+        height: 18vh;
+        margin-top: 5px; /* 🔥 aún más pegado */
+    }
+}
+
+/* ALTURA CRÍTICA */
+@media (min-width: 1024px) and (max-height: 450px) {
+
+    .carrusel {
+        height: 15vh;
+        margin-top: 0px; /* 🔥 evita que se rompa */
+    }
+}
+
 /* ===== CENTRADO DE TEXTOS MOVIL/TABLET ===== */
 @media (max-width: 768px) {
     .nosotros .titulo,
