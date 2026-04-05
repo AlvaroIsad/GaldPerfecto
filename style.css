@@ -1503,7 +1503,7 @@ nav .menu-toggle {
 
     .carrusel {
         height: clamp(100px, 20vh, 200px);
-        margin-top: 10px; /* 🔥 menos separación */
+        margin-top: 25px; /* 🔥 menos separación */
     }
 }
 
@@ -1512,7 +1512,7 @@ nav .menu-toggle {
 
     .carrusel {
         height: 18vh;
-        margin-top: 5px; /* 🔥 aún más pegado */
+        margin-top: 10px; /* 🔥 aún más pegado */
     }
 }
 
