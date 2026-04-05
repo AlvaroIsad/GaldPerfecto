@@ -178,6 +178,7 @@
 
 <script>
 let imagenes = [];
+let preCargadas = []; // array de objetos Image
 let index = 0;
 
 const modal = document.getElementById("modal");
@@ -189,8 +190,15 @@ function abrirGaleria(imgs, titulo, desc) {
     imagenes = imgs;
     index = 0;
 
-    modal.classList.add("activo"); // usamos clase en vez de display
-    document.body.classList.add("no-scroll"); // 🔥 BLOQUEA SCROLL
+    // Pre-cargar todas las imágenes
+    preCargadas = imagenes.map(src => {
+        const img = new Image();
+        img.src = src;
+        return img;
+    });
+
+    modal.classList.add("activo");
+    document.body.classList.add("no-scroll");
 
     actualizarContenido(titulo, desc);
 }
@@ -198,18 +206,18 @@ function abrirGaleria(imgs, titulo, desc) {
 function actualizarContenido(titulo, desc) {
     modalImg.style.opacity = 0;
 
+    // Espera mínima para animación
     setTimeout(() => {
-        modalImg.src = imagenes[index];
+        modalImg.src = preCargadas[index].src; // usar la imagen pre-cargada
         modalTitulo.textContent = titulo;
         modalDesc.textContent = desc;
 
         modalImg.style.opacity = 1;
-    }, 200);
+    }, 150);
 }
 
 function cambiarImg(direccion) {
     index += direccion;
-
     if (index < 0) index = imagenes.length - 1;
     if (index >= imagenes.length) index = 0;
 
@@ -218,27 +226,17 @@ function cambiarImg(direccion) {
 
 function cerrarModal() {
     modal.classList.remove("activo");
-    document.body.classList.remove("no-scroll"); // 🔥 RESTAURA SCROLL
+    document.body.classList.remove("no-scroll");
 }
 
-/* cerrar al hacer click fuera */
 window.onclick = function(e) {
-    if (e.target === modal) {
-        cerrarModal();
-    }
+    if (e.target === modal) cerrarModal();
 }
 
-/* cerrar con ESC */
-document.addEventListener("keydown", function(e) {
-    if (e.key === "Escape") {
-        cerrarModal();
-    }
-});
-
-/* navegación con teclado */
 document.addEventListener("keydown", function(e) {
     if (!modal.classList.contains("activo")) return;
 
+    if (e.key === "Escape") cerrarModal();
     if (e.key === "ArrowRight") cambiarImg(1);
     if (e.key === "ArrowLeft") cambiarImg(-1);
 });
