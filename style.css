@@ -1498,43 +1498,6 @@ nav .menu-toggle {
     }
 }
 
-/* ===== FIX OVERLAP CARRUSEL ===== */
-@media (max-height: 700px) {
-
-    .banner {
-        min-height: clamp(250px, 55vh, 500px);
-    }
-
-    .carrusel {
-        height: clamp(100px, 18vh, 180px);
-        margin-top: 0; /* 🔥 importante */
-    }
-}
-
-/* ALTURA MÁS BAJA */
-@media (max-height: 600px) {
-
-    .banner {
-        min-height: 50vh;
-    }
-
-    .carrusel {
-        height: 16vh;
-    }
-}
-
-/* ALTURA CRÍTICA */
-@media (max-height: 500px) {
-
-    .banner {
-        min-height: 45vh;
-    }
-
-    .carrusel {
-        height: 14vh;
-    }
-}
-
 /* ===== CENTRADO DE TEXTOS MOVIL/TABLET ===== */
 @media (max-width: 768px) {
     .nosotros .titulo,
